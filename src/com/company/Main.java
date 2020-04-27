@@ -24,9 +24,12 @@ public class Main {
         Company utnCompany = new Company("UTN Company", utnEmployeesList, utnBuildingConstructionList);
 
         //Inciso C
-        BuildingConstruction firstCommerce = new Commerce("Luro 1111", 600, 30, 1200, TeamWork.workingTeam(), "Super Mini Store", "kiosk");
-        BuildingConstruction firstResidentialBuild = new ResidentialBuild("Saavedra 2222", 400, 20, 1500, TeamWork.workingTeam(), 6);
-        BuildingConstruction firstHotel = new Hotel("Gascon 1515", 1800, 180, 900, TeamWork.workingTeam(), "Cosy Hotel", 4);
+        ArrayList<Employee> auxList1 = TeamWork.workingTeam();
+        ArrayList<Employee> auxList2 = TeamWork.workingTeam();
+        ArrayList<Employee> auxList3 = TeamWork.workingTeam();
+        BuildingConstruction firstCommerce = new Commerce("Luro 1111", 600, 30, 1200, auxList1, "Super Mini Store", "kiosk");
+        BuildingConstruction firstResidentialBuild = new ResidentialBuild("Saavedra 2222", 400, 20, 1500, auxList2, 6);
+        BuildingConstruction firstHotel = new Hotel("Gascon 1515", 1800, 180, 900, auxList3, "Cosy Hotel", 4);
 
         System.out.println("Inciso C");
         System.out.println("Estimated cost of Super Mini Store: "+firstCommerce.estimatedTotalCost());
@@ -50,8 +53,5 @@ public class Main {
             System.out.println(utnBuildingConstructionList.get(i).toString());
             System.out.println("Estimated cost: "+utnBuildingConstructionList.get(i).estimatedTotalCost());
         }
-
-
-
     }
 }

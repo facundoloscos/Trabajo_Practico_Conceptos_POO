@@ -23,6 +23,11 @@ public class TeamWork {  //Clase auxiliar para generar listas de empleados con l
         Worker wor2 = new Worker ("Wor2", 22222222, 622222, EmploeeSalary.WORKER, 22);
         Worker wor3 = new Worker ("Wor3", 33333333, 633333, EmploeeSalary.WORKER, 23);
         Worker wor4 = new Worker ("Wor4", 44444444, 644444, EmploeeSalary.WORKER, 24);
+        Worker wor5 = new Worker ("Wor5", 55555555, 655555, EmploeeSalary.WORKER, 25);
+        Worker wor6 = new Worker ("Wor6", 66666666, 666666, EmploeeSalary.WORKER, 26);
+        Worker wor7 = new Worker ("Wor7", 77777777, 677777, EmploeeSalary.WORKER, 27);
+        Worker wor8 = new Worker ("Wor8", 88888888, 688888, EmploeeSalary.WORKER, 28);
+        Worker wor9 = new Worker ("Wor9", 99999999, 699999, EmploeeSalary.WORKER, 29);
 
         ArrayList<Architect> archList = new ArrayList<Architect>();
         ArrayList<ConstructionMaster> conMasList = new ArrayList<ConstructionMaster>();
@@ -39,19 +44,25 @@ public class TeamWork {  //Clase auxiliar para generar listas de empleados con l
         workerList.add(wor2);
         workerList.add(wor3);
         workerList.add(wor4);
+        workerList.add(wor5);
+        workerList.add(wor6);
+        workerList.add(wor7);
+        workerList.add(wor8);
+        workerList.add(wor9);
+
 
         int numArch = aux.nextInt(4);     //Agrego de manera aleatoria a la lista de empleados un arquitecto
         emploeeList.add(archList.get(numArch));
 
-        int numConMas = 1 + aux.nextInt(3);  //Numero de Maestro mayor de obras para agregar a la lista
-        for (int i=0; i<numConMas; i++){            //Uso un ciclo for para agregarlos de forma aleatoria y sin repetir
+        int numConMas = 1 + aux.nextInt(conMasList.size()-1);  //Numero de Maestro mayor de obras para agregar a la lista
+        for (int i=0; i<numConMas; i++){                              //Uso un ciclo for para agregarlos de forma aleatoria y sin repetir
             int randConMas = aux.nextInt(conMasList.size());
             emploeeList.add(conMasList.get(randConMas));
             conMasList.remove(randConMas);
         }
 
-        int numWork = 2 + aux.nextInt(3);  //Numero de obreros para agregar a la lista, puse de 2 hasta 4 porque cree cuatro
-        for (int i=0; i<numWork; i++){            //Uso un ciclo para agregarlos de forma aleatoria y sin repetir
+        int numWork = 2 + aux.nextInt(workerList.size()-1);  //Numero de obreros para agregar a la lista, puse de 2 hasta infinito.rojo
+        for (int i=0; i<numWork; i++){                              //Uso un ciclo para agregarlos de forma aleatoria y sin repetir
             int randWork = aux.nextInt(workerList.size());
             emploeeList.add(workerList.get(randWork));
             workerList.remove(randWork);
